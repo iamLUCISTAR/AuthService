@@ -27,6 +27,19 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser):
+    def __init__(self, *args, **kwargs):
+        self.password_changed = False
+        super().__init__(*args, **kwargs)
+
+    def save(self, *args, **kwargs):
+        if self.pk:
+            old_user = CustomUser.objects.get(pk=self.pk)
+            if old_user.password != self.password:
+                self.password_changed = True
+        else:
+            self.password_changed = False
+        super().save(*args, **kwargs)
+
     email = models.EmailField(unique=True, validators=[EmailValidator()])
     profile = models.JSONField(default=dict, null=False)
     status = models.IntegerField(default=0, null=False)

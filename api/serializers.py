@@ -1,11 +1,9 @@
-from .models import Organization, Role, Member
-from rest_framework import serializers
-
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from .models import Organization, Role, Member, CustomUser
 from django.db import transaction
-from django.contrib.auth.forms import UserCreationForm
+from django.core.mail import send_mail
+
 
 User = get_user_model()
 
@@ -89,3 +87,23 @@ class MemberSerializer(serializers.Serializer):
                 settings=settings
             )
             return member
+
+
+class PasswordUpdateSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    new_password = serializers.CharField(write_only=True)
+
+    def validate_email(self, value):
+        try:
+            user = User.objects.get(email=value)
+        except User.DoesNotExist:
+            raise serializers.ValidationError("This email is not registered.")
+        return value
+
+    def save(self):
+        email = self.validated_data['email']
+        new_password = self.validated_data['new_password']
+        user = User.objects.get(email=email)
+        user.set_password(new_password)
+        user.save()
+        return user
