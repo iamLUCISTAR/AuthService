@@ -6,7 +6,7 @@ Api's for handling multi-tenant saas backend operations for handling the below s
 - Sending alert mails for each action performed.
 - Retrieving number of users based on organization and roles with filters such as from and to date.
 
-Django REST framework was used to develop the project to keep the application scalable and easily maintainable.
+Django REST framework was used to develop the project to keep the application scalable and maintainable.
 
 ## DB design
 4 tables as mentioned in the requirements with necessary contstraint and keys have been modeled. In addition to it a
@@ -43,14 +43,15 @@ Code respository is defined in the below structure,
    - Upon invite acceptance the user will added with the invited role in the system, if he accepts before the token expiration.
 6. **Email alert for every actions**
    - Sign up
-   - ![Sign up](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.23%20AM.png?raw=true)
+     ![Sign up](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.23%20AM.png?raw=true)
    - Sign in
-   - ![Sign in](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.32%20AM.png?raw=true)
+     ![Sign in](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.32%20AM.png?raw=true)
    - Password update
-   - ![Password change](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.43%20AM.png?raw=true)
+     ![Password change](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.43%20AM.png?raw=true)
    - Invite member
-   - ![Invite member](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.52%20AM.png?raw=true)
+     ![Invite member](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.52%20AM.png?raw=true)
 7. **Stats of users**
+   The api's expect JWT token as part of the request header. Requests without the JWT token will not be served.
    - Get the count of users role wise.
    - Get the count of users organization wise.
    - Get the count of users based on roles and the organization.
