@@ -9,7 +9,7 @@ Api's for handling multi-tenant saas backend operations for handling the below s
 ## DB design
 
 
-
+![Database Schema](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2012.14.31%20PM.png?raw=true)
 
 
 ## Code
