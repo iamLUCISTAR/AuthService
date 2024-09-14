@@ -50,10 +50,8 @@ class RoleSerializer(serializers.ModelSerializer):
         fields = ['name', 'organization', 'description']
 
     def create(self, validated_data):
-        # Extract organization data
         organization_data = validated_data.pop('organization')
         organization, created = Organization.objects.get_or_create(**organization_data)
-        # Create the role with the retrieved or created organization
         role, created = Role.objects.get_or_create(organization=organization, **validated_data)
         return role
 
@@ -99,7 +97,7 @@ class MemberSerializer(serializers.Serializer):
             settings = validated_data.pop('settings', dict)
             organization, created = Organization.objects.get_or_create(**organization_data)
             role = RoleSerializer().create(validated_data=role_data)
-            user = CustomUser.objects.create(**user_data)
+            user = CustomUser.objects.create_user(**user_data)
             member = Member.objects.create(
                 user=user,
                 organization=organization,

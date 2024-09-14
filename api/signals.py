@@ -43,7 +43,7 @@ def send_password_update_email(sender, instance, created, **kwargs):
     """
     if not created:
         if getattr(instance, 'password_changed', False):
-            subject = 'Login Alert: Account logged in!!'
+            subject = 'Password change alert: Account password changed!!'
             message = f'Dear {instance.email},\n\nYour new password has been successfully updated.'
             send_mail(
                 subject,
