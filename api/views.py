@@ -16,6 +16,7 @@ User = get_user_model()
 
 
 class MemberView(APIView):
+    permission_classes = [IsAuthenticated]
     """
     API for updating and deleting members.
     """

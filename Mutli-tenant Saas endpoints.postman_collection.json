@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "fdbd66f9-9977-4e13-9859-64a92274684b",
+		"name": "Mutli-tenant Saas endpoints",
+		"description": "Backend API's endpoints for multi-tenant Saas authentication.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27038689"
+	},
+	"item": [
+		{
+			"name": "jwt token refresh",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNjM3MzcyOCwiaWF0IjoxNzI2Mjg3MzI4LCJqdGkiOiIxOGRiMDUxNDYyNDM0NGRjYTc5NDg5ZGQ5NWI4OTcxZSIsInVzZXJfaWQiOjEzfQ.qZLAYWYaCz6469UFtHCy1BgWflzMCDWDrS9nlbslVwc\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign-up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"email\": \"demo4@gmail.com\",\n        \"password\": \"Demo@123\"\n    },\n    \"organization\": {\n        \"name\": \"Infosys\"\n    },\n    \"role\": {\n        \"organization\": {\n            \"name\": \"Infosys\"\n        }\n    },\n    \"status\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/sign-up/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"sign-up",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign-in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"spotifymetrial1@gmail.com\",\n    \"password\":\"Demo@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/sign-in/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"sign-in",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset-password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"spotifymetrial1@gmail.com\",\n    \"new_password\":\"securepassword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/reset-password/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"reset-password",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-member",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"spotifymetrial1@gmail.com\",\n    \"role\":{\n        \"name\":\"Admin\",\n        \"organization\":\n        {\n            \"name\": \"CTS\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/member/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"member",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-member",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"demo1@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/member/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"member",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invite-member",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"spotifymetrial1@gmail.com\",\n    \"role\":{\n        \"name\":\"owner\",\n        \"organization\":{\n            \"name\":\"Infosys\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/invite-member/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"invite-member",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accept-invite",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/accept-invite/1490ab42-8d83-484a-bfd6-ac9a5590439d/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accept-invite",
+						"1490ab42-8d83-484a-bfd6-ac9a5590439d",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "roles-users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/stats/role-users/?created_after=2024-09-14T00:00:00&created_before=2024-09-14T10:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"stats",
+						"role-users",
+						""
+					],
+					"query": [
+						{
+							"key": "created_after",
+							"value": "2024-09-14T00:00:00"
+						},
+						{
+							"key": "created_before",
+							"value": "2024-09-14T10:00:00"
+						},
+						{
+							"key": "status",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "organization-users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/stats/organization-users/?created_after=2024-09-14T00:00:00&created_before=2024-09-14T00:00:00&status=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"stats",
+						"organization-users",
+						""
+					],
+					"query": [
+						{
+							"key": "created_after",
+							"value": "2024-09-14T00:00:00"
+						},
+						{
+							"key": "created_before",
+							"value": "2024-09-14T00:00:00"
+						},
+						{
+							"key": "status",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "organization-role-users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/stats/organization-role-users/?created_after=2024-09-14T00:00:00&status=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"stats",
+						"organization-role-users",
+						""
+					],
+					"query": [
+						{
+							"key": "created_after",
+							"value": "2024-09-14T00:00:00"
+						},
+						{
+							"key": "status",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
