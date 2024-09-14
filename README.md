@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/7b00dd3a-8d9c-4844-9504-629c7471d91d)# Multi-tenant Saas authentication system
+# Multi-tenant Saas authentication system
 Api's for handling multi-tenant saas backend operations for handling the below scenarios.
 - Creating a user and assigning a role for him in a organization.
 - Inviting members from different organizations.
