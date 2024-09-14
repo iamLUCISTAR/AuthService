@@ -6,7 +6,7 @@ Api's for handling multi-tenant saas backend operations for handling the below s
 - Sending alert mails for each action performed.
 - Retrieving number of users based on organization and roles with filters such as from and to date.
 
-Django REST framework was used to develop the project to keep the application scalable and maintainable.
+**Django REST framework** along with **sqlite3** was used to develop the project to keep the application scalable and maintainable.
 
 ## DB design
 4 tables as mentioned in the requirements with necessary contstraint and keys have been modeled. In addition to it a
