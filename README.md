@@ -9,10 +9,7 @@ Api's for handling multi-tenant saas backend operations for handling the below s
 **Django REST framework** along with **sqlite3** was used to develop the project to keep the application scalable and maintainable.
 
 ## DB design
-4 tables as mentioned in the requirements with necessary contstraint and keys have been modeled. In addition to it a
-new table called,
-- Invitation
-is included to keep track of invitations sent to different users.
+4 tables as mentioned in the requirements with necessary contstraint and keys have been modeled. A 5th table **Invitation** is included to keep track of sent invitations.
 
 ![Database Schema](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2012.14.31%20PM.png?raw=true)
 
@@ -20,13 +17,15 @@ is included to keep track of invitations sent to different users.
 ## Code
 
 Running the python manage.py hosts the dev server for the application in local instance. 
-Endpoints for each api's have been mentioned in the postman exports.
+Endpoints for each api's can be found in the urls.py file.
+
+Postman export JSON file is included in the main repo to browse the api's.
 
 Code respository is defined in the below structure,
 
-- api
-  - auth
-  - stats
+- api (main application)
+  - auth (hosts auth services)
+  - stats (hosts stats services)
 
 ## Use cases covered
 
