@@ -1,16 +1,20 @@
 import datetime
 import uuid
+
 from django.urls import reverse
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-from django.core.validators import EmailValidator
 from django.contrib.sites.models import Site
 from django.core.mail import send_mail
+from django.core.validators import EmailValidator
 from django.conf import settings
 
 
 class Organization(models.Model):
+    """
+    Model for storing organization details
+    """
     name = models.CharField(max_length=50, null=False)
     status = models.IntegerField(default=0, null=False)
     personal = models.BooleanField(default=False, null=True)
@@ -20,6 +24,9 @@ class Organization(models.Model):
 
 
 class CustomUserManager(BaseUserManager):
+    """
+    Manager class for handling the user model
+    """
     def create_user(self, email, password=None, **extra_fields):
         """
         Create and return a user with an email and password.
@@ -34,18 +41,12 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser):
+    """
+    Model for storing user details
+    """
     def __init__(self, *args, **kwargs):
         self.password_changed = False
         super().__init__(*args, **kwargs)
-
-    def save(self, *args, **kwargs):
-        if self.pk:
-            old_user = CustomUser.objects.get(pk=self.pk)
-            if old_user.password != self.password:
-                self.password_changed = True
-        else:
-            self.password_changed = False
-        super().save(*args, **kwargs)
 
     email = models.EmailField(unique=True, validators=[EmailValidator()])
     profile = models.JSONField(default=dict, null=False)
@@ -58,17 +59,32 @@ class CustomUser(AbstractBaseUser):
 
     USERNAME_FIELD = 'email'
 
-    # def __str__(self):
-    #     return self.email
+    def save(self, *args, **kwargs):
+        if self.pk:
+            old_user = CustomUser.objects.get(pk=self.pk)
+            if old_user.password != self.password:
+                self.password_changed = True
+        else:
+            self.password_changed = False
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.email
 
 
 class Role(models.Model):
+    """
+    Model for storing role details of an organization.
+    """
     name = models.CharField(max_length=50, default='owner', null=False)
     description = models.TextField(null=True)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name='roles', null=False)
 
 
 class Member(models.Model):
+    """
+    Model for storing member details along with user, role and organization details.
+    """
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name='members', null=False)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='members', null=False)
     role = models.ForeignKey(Role, on_delete=models.CASCADE, related_name='members', null=False)
@@ -84,10 +100,17 @@ class Member(models.Model):
 
 
 def get_default_expiration():
+    """
+    Function to return expiration time for invitation token
+    :return:
+    """
     return timezone.now() + datetime.timedelta(hours=24)
 
 
 class Invitation(models.Model):
+    """
+    Model for storing invitation details
+    """
     email = models.EmailField(validators=[EmailValidator()])
     invited_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='users', null=False)
     role = models.ForeignKey(Role, on_delete=models.CASCADE, related_name='role', null=False)

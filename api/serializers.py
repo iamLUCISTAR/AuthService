@@ -1,15 +1,20 @@
-from rest_framework import serializers
-from django.contrib.auth import get_user_model
-from .models import Organization, Role, Member, CustomUser, Invitation
-from django.db import transaction
 from datetime import datetime
-from django.shortcuts import get_object_or_404
 
+from rest_framework import serializers
+
+from django.contrib.auth import get_user_model
+from django.shortcuts import get_object_or_404
+from django.db import transaction
+
+from .models import Organization, Role, Member, CustomUser, Invitation
 
 User = get_user_model()
 
 
 class CustomUserLoginSerializer(serializers.Serializer):
+    """
+    Serializer class for login functionality.
+    """
     email = serializers.EmailField()
     password = serializers.CharField()
 
@@ -25,12 +30,18 @@ class CustomUserLoginSerializer(serializers.Serializer):
 
 
 class OrganizationSerializer(serializers.ModelSerializer):
+    """
+    Serializer class for organization model.
+    """
     class Meta:
         model = Organization
         fields = ['name', 'status', 'personal', 'settings', 'created_at', 'updated_at']
 
 
 class RoleSerializer(serializers.ModelSerializer):
+    """
+    Serializer class for role model.
+    """
     name = serializers.CharField(max_length=50, default='owner')
     organization = OrganizationSerializer()
 
@@ -48,6 +59,9 @@ class RoleSerializer(serializers.ModelSerializer):
 
 
 class CustomUserSerializer(serializers.ModelSerializer):
+    """
+    Serializer class for user model
+    """
     password = serializers.CharField(write_only=True)
 
     class Meta:
@@ -61,6 +75,9 @@ class CustomUserSerializer(serializers.ModelSerializer):
 
 
 class MemberSerializer(serializers.Serializer):
+    """
+    Serializer class for member model
+    """
     user = CustomUserSerializer()
     organization = OrganizationSerializer()
     role = RoleSerializer()
@@ -102,6 +119,9 @@ class MemberSerializer(serializers.Serializer):
 
 
 class PasswordUpdateSerializer(serializers.Serializer):
+    """
+    Serializer class for password update functionality.
+    """
     email = serializers.EmailField()
     new_password = serializers.CharField(write_only=True)
 
@@ -122,6 +142,9 @@ class PasswordUpdateSerializer(serializers.Serializer):
 
 
 class InvitationSerializer(serializers.ModelSerializer):
+    """
+    Serializer class for send invite functionality
+    """
 
     role = RoleSerializer()
     class Meta:
