@@ -28,20 +28,20 @@ Code respository is defined in the below structure,
   - auth
   - stats
 
-## Use cases covered.
+## Use cases covered
 
-1. ** Sign Up **
+1. **Sign Up**
    - Users can be created with orgainization details and role specification.
-2. ** Sign In **
+2. **Sign In**
    - Verifies user encrypted password from the user table and returns a JWT Token(Access token and Refresh token).
-3. ** Reset Password **
+3. **Reset Password**
    - User can reset his account password if he is already a user and send password change alert.
-4. ** Update and Delete member **
+4. **Update and Delete member**
    - Members role can be updated and deleted.
-5. ** Send and Accept Invite **
+5. **Send and Accept Invite**
    - Existing members can invite another user using an invite-member mail with a token with some expiry time.
    - Upon invite acceptance the user will added with the invited role in the system, if he accepts before the token expiration.
-6. ** Email alert for every actions **
+6. **Email alert for every actions**
    - Sign up
    - ![Sign up](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.23%20AM.png?raw=true)
    - Sign in
@@ -50,7 +50,7 @@ Code respository is defined in the below structure,
    - ![Password change](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.43%20AM.png?raw=true)
    - Invite member
    - ![Invite member](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.52%20AM.png?raw=true)
-7. ** Stats of users **
+7. **Stats of users**
    - Get the count of users role wise.
    - Get the count of users organization wise.
    - Get the count of users based on roles and the organization.
