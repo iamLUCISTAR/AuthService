@@ -1,8 +1,9 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import Organization, Role, Member, CustomUser
+from .models import Organization, Role, Member, CustomUser, Invitation
 from django.db import transaction
-from django.core.mail import send_mail
+from datetime import datetime
+from django.shortcuts import get_object_or_404
 
 
 User = get_user_model()
@@ -30,11 +31,12 @@ class OrganizationSerializer(serializers.ModelSerializer):
 
 
 class RoleSerializer(serializers.ModelSerializer):
+    name = serializers.CharField(max_length=50, default='owner')
     organization = OrganizationSerializer()
 
     class Meta:
         model = Role
-        fields = ['name', 'description', 'organization']
+        fields = ['name', 'organization', 'description']
 
     def create(self, validated_data):
         # Extract organization data
@@ -64,6 +66,8 @@ class MemberSerializer(serializers.Serializer):
     role = RoleSerializer()
     status = serializers.IntegerField(required=False, default=0)
     settings = serializers.JSONField(required=False, default=dict)
+    created_at = serializers.DateTimeField(required=False, default=datetime.now())
+    updated_at = serializers.DateTimeField(required=False, default=datetime.now())
 
     class Meta:
         model = Member
@@ -78,7 +82,7 @@ class MemberSerializer(serializers.Serializer):
             settings = validated_data.pop('settings', dict)
             organization, created = Organization.objects.get_or_create(**organization_data)
             role = RoleSerializer().create(validated_data=role_data)
-            user = CustomUser.objects.create_user(**user_data)
+            user = CustomUser.objects.create(**user_data)
             member = Member.objects.create(
                 user=user,
                 organization=organization,
@@ -87,6 +91,14 @@ class MemberSerializer(serializers.Serializer):
                 settings=settings
             )
             return member
+
+    def update(self, instance, validated_data):
+        instance.status = validated_data.get('status', instance.status)
+        instance.settings = validated_data.get('settings', instance.settings)
+        instance.updated_at = datetime.now()
+        instance.role = RoleSerializer().create(validated_data=validated_data['role'])
+        instance.save()
+        return instance
 
 
 class PasswordUpdateSerializer(serializers.Serializer):
@@ -107,3 +119,23 @@ class PasswordUpdateSerializer(serializers.Serializer):
         user.set_password(new_password)
         user.save()
         return user
+
+
+class InvitationSerializer(serializers.ModelSerializer):
+
+    role = RoleSerializer()
+    class Meta:
+        model = Invitation
+        fields = ["email", "token", "is_accepted", "created_at", "accepted_at", "role"]
+        read_only_fields = ["token", "is_accepted", "expires_at"]
+
+    def create(self, validated_data):
+        role = validated_data.get('role')
+        print(role['name'], role['organization']['name'])
+        validated_data['role'] = get_object_or_404(Role,
+                                                   name=role['name'],
+                                                   organization__name=role['organization']['name'])
+        invitation = super().create(validated_data)
+        invitation.send_invite_mail()
+        return invitation
+
