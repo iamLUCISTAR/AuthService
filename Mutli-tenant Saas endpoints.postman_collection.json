@@ -48,7 +48,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"user\": {\n        \"email\": \"demo4@gmail.com\",\n        \"password\": \"Demo@123\"\n    },\n    \"organization\": {\n        \"name\": \"Infosys\"\n    },\n    \"role\": {\n        \"organization\": {\n            \"name\": \"Infosys\"\n        }\n    },\n    \"status\": 1\n}",
+					"raw": "{\n    \"user\": {\n        \"email\": \"demo6@gmail.com\",\n        \"password\": \"Demo@123\"\n    },\n    \"organization\": {\n        \"name\": \"Google\"\n    },\n    \"role\": {\n        \"name\": \"viewer\",\n        \"organization\": {\n            \"name\": \"Google\"\n        }\n    },\n    \"status\": 1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -70,7 +70,162 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "sign-up",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"email\": \"demo6@gmail.com\",\n        \"password\": \"Demo@123\"\n    },\n    \"organization\": {\n        \"name\": \"Google\"\n    },\n    \"role\": {\n        \"name\": \"viewer\",\n        \"organization\": {\n            \"name\": \"Google\"\n        }\n    },\n    \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/sign-up/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"sign-up",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:36:47 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "637"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"email\": \"demo6@gmail.com\",\n        \"profile\": {},\n        \"status\": 0,\n        \"settings\": {},\n        \"created_at\": \"2024-09-14T07:36:44.659794Z\",\n        \"updated_at\": \"2024-09-14T07:36:44.659825Z\"\n    },\n    \"organization\": {\n        \"name\": \"Google\",\n        \"status\": 0,\n        \"personal\": false,\n        \"settings\": {},\n        \"created_at\": \"2024-09-14T07:36:25.281535Z\",\n        \"updated_at\": \"2024-09-14T07:36:25.281565Z\"\n    },\n    \"role\": {\n        \"name\": \"viewer\",\n        \"organization\": {\n            \"name\": \"Google\",\n            \"status\": 0,\n            \"personal\": false,\n            \"settings\": {},\n            \"created_at\": \"2024-09-14T07:36:25.281535Z\",\n            \"updated_at\": \"2024-09-14T07:36:25.281565Z\"\n        },\n        \"description\": null\n    },\n    \"status\": 1,\n    \"settings\": {},\n    \"created_at\": \"2024-09-14T07:36:47.915243Z\",\n    \"updated_at\": \"2024-09-14T07:36:47.915280Z\"\n}"
+				},
+				{
+					"name": "sign-up",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"email\": \"demo6@gmail.com\",\n        \"password\": \"Demo@123\"\n    },\n    \"organization\": {\n        \"name\": \"Google\"\n    },\n    \"role\": {\n        \"name\": \"viewer\",\n        \"organization\": {\n            \"name\": \"Google\"\n        }\n    },\n    \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/sign-up/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"sign-up",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:49:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"email\": [\n            \"custom user with this email already exists.\"\n        ]\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "sign-in",
@@ -79,7 +234,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\":\"spotifymetrial1@gmail.com\",\n    \"password\":\"Demo@123\"\n}",
+					"raw": "{\n    \"email\":\"demo2@gmail.com\",\n    \"password\":\"securepassword\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -101,7 +256,85 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "sign-in",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"demo2@gmail.com\",\n    \"password\":\"securepassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/sign-in/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"sign-in",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:50:18 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "483"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNjM4NjYxNSwiaWF0IjoxNzI2MzAwMjE1LCJqdGkiOiIwMjc3M2FkNGFmNjE0NDVjOGNmNDdiOTFiMDQxYTMyNCIsInVzZXJfaWQiOjJ9.IIL8Q3xcz-0DpjFk6xnAqxqLS1-muII1hKApjvPZvK0\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzODE1LCJpYXQiOjE3MjYzMDAyMTUsImp0aSI6IjI3ZGE4Nzg0ZDYwYjQzMTM5MGFkZjkzYjkwMjgwNmI4IiwidXNlcl9pZCI6Mn0.lStzO6qmckGGp9hIins-yvA7eSozWOn6hEOGCbyE-Gk\"\n}"
+				}
+			]
 		},
 		{
 			"name": "reset-password",
@@ -110,7 +343,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\":\"spotifymetrial1@gmail.com\",\n    \"new_password\":\"securepassword\"\n}",
+					"raw": "{\n    \"email\":\"demo2@gmail.com\",\n    \"new_password\":\"securepassword\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -132,7 +365,162 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "reset-password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"demo2@gmail.com\",\n    \"new_password\":\"securepassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/reset-password/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"reset-password",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:37:29 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "82"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"Password has been updated and confirmation email sent to demo2@gmail.com\"\n}"
+				},
+				{
+					"name": "reset-password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"demo@gmail.com\",\n    \"new_password\":\"securepassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/reset-password/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"reset-password",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:50:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"email\": [\n        \"This email is not registered.\"\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "update-member",
@@ -141,13 +529,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\":\"spotifymetrial1@gmail.com\",\n    \"role\":{\n        \"name\":\"Admin\",\n        \"organization\":\n        {\n            \"name\": \"CTS\"\n        }\n    }\n}",
+					"raw": "{\n    \"email\":\"demo1@gmail.com\",\n    \"role\":{\n        \"name\":\"admin\",\n        \"organization\":\n        {\n            \"name\": \"Infosys\"\n        }\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -168,7 +556,172 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "update-member",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"demo1@gmail.com\",\n    \"role\":{\n        \"name\":\"admin\",\n        \"organization\":\n        {\n            \"name\": \"Infosys\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/member/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"member",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:39:28 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "638"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"email\": \"demo1@gmail.com\",\n        \"profile\": {},\n        \"status\": 0,\n        \"settings\": {},\n        \"created_at\": \"2024-09-14T07:34:35.905095Z\",\n        \"updated_at\": \"2024-09-14T07:34:35.905139Z\"\n    },\n    \"organization\": {\n        \"name\": \"Infosys\",\n        \"status\": 0,\n        \"personal\": false,\n        \"settings\": {},\n        \"created_at\": \"2024-09-14T07:34:35.179889Z\",\n        \"updated_at\": \"2024-09-14T07:34:35.180268Z\"\n    },\n    \"role\": {\n        \"name\": \"admin\",\n        \"organization\": {\n            \"name\": \"Infosys\",\n            \"status\": 0,\n            \"personal\": false,\n            \"settings\": {},\n            \"created_at\": \"2024-09-14T07:34:35.179889Z\",\n            \"updated_at\": \"2024-09-14T07:34:35.180268Z\"\n        },\n        \"description\": null\n    },\n    \"status\": 1,\n    \"settings\": {},\n    \"created_at\": \"2024-09-14T07:34:39.669326Z\",\n    \"updated_at\": \"2024-09-14T07:39:28.087702Z\"\n}"
+				},
+				{
+					"name": "update-member",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"demo1@gmail.com\",\n    \"role\":{\n        \"name\":\"viewer\",\n        \"organization\":\n        {\n            \"name\": \"Infosys\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/member/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"member",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:51:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"Mentioned role is not present in the requested organization\"\n}"
+				}
+			]
 		},
 		{
 			"name": "delete-member",
@@ -177,7 +730,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
 						"type": "text"
 					}
 				],
@@ -204,7 +757,172 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "delete-member",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"demo1@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/member/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"member",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:40:05 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"Member deleted successfully!!\"\n}"
+				},
+				{
+					"name": "delete-member",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"demo1@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/member/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"member",
+								""
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:51:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"No Member matches the given query.\"\n}"
+				}
+			]
 		},
 		{
 			"name": "invite-member",
@@ -213,13 +931,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMjQ0LCJpYXQiOjE3MjYyOTk2NDQsImp0aSI6ImU1N2MyYzgxNTE5YjRlNGZhMGM5YTlhOTZhZmU5MTY0IiwidXNlcl9pZCI6Mn0.LbK2K0w1YbPg-TAk6wRwiKaKE70cJzNYVVCySYaPzCM",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\":\"spotifymetrial1@gmail.com\",\n    \"role\":{\n        \"name\":\"owner\",\n        \"organization\":{\n            \"name\":\"Infosys\"\n        }\n    }\n}",
+					"raw": "{\n    \"email\":\"demo1@gmail.com\",\n    \"role\":{\n        \"name\":\"owner\",\n        \"organization\":{\n            \"name\":\"Infosys\"\n        }\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -240,7 +958,90 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "invite-member",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMjQ0LCJpYXQiOjE3MjYyOTk2NDQsImp0aSI6ImU1N2MyYzgxNTE5YjRlNGZhMGM5YTlhOTZhZmU5MTY0IiwidXNlcl9pZCI6Mn0.LbK2K0w1YbPg-TAk6wRwiKaKE70cJzNYVVCySYaPzCM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"demo1@gmail.com\",\n    \"role\":{\n        \"name\":\"owner\",\n        \"organization\":{\n            \"name\":\"Infosys\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/invite-member/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"invite-member",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:42:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"Invitation sent to the user\"\n}"
+				}
+			]
 		},
 		{
 			"name": "accept-invite",
@@ -249,12 +1050,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8000/api/accept-invite/1490ab42-8d83-484a-bfd6-ac9a5590439d/",
+					"raw": "http://localhost:8000/api/accept-invite/d3efbc4b-9604-4923-9d9f-8de9b769cd70/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -263,12 +1064,161 @@
 					"path": [
 						"api",
 						"accept-invite",
-						"1490ab42-8d83-484a-bfd6-ac9a5590439d",
+						"d3efbc4b-9604-4923-9d9f-8de9b769cd70",
 						""
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "accept-invite",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/accept-invite/d3efbc4b-9604-4923-9d9f-8de9b769cd70/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"accept-invite",
+								"d3efbc4b-9604-4923-9d9f-8de9b769cd70",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:44:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"err\": \"Invitation invalid or expired.\"\n}"
+				},
+				{
+					"name": "accept-invite",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/accept-invite/52bf91e4-71ab-4ae0-9e09-485b7cf8b9ce/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"accept-invite",
+								"52bf91e4-71ab-4ae0-9e09-485b7cf8b9ce",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:52:27 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"Member created Successfully\"\n}"
+				}
+			]
 		},
 		{
 			"name": "roles-users",
@@ -277,7 +1227,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMjQ0LCJpYXQiOjE3MjYyOTk2NDQsImp0aSI6ImU1N2MyYzgxNTE5YjRlNGZhMGM5YTlhOTZhZmU5MTY0IiwidXNlcl9pZCI6Mn0.LbK2K0w1YbPg-TAk6wRwiKaKE70cJzNYVVCySYaPzCM",
 						"type": "text"
 					}
 				],
@@ -311,7 +1261,277 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "roles-users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMjQ0LCJpYXQiOjE3MjYyOTk2NDQsImp0aSI6ImU1N2MyYzgxNTE5YjRlNGZhMGM5YTlhOTZhZmU5MTY0IiwidXNlcl9pZCI6Mn0.LbK2K0w1YbPg-TAk6wRwiKaKE70cJzNYVVCySYaPzCM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/stats/role-users/?created_after=2024-09-14T00:00:00&created_before=2024-09-14T10:00:00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"stats",
+								"role-users",
+								""
+							],
+							"query": [
+								{
+									"key": "created_after",
+									"value": "2024-09-14T00:00:00"
+								},
+								{
+									"key": "created_before",
+									"value": "2024-09-14T10:00:00"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:52:35 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, GET"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"admin\": 3,\n    \"owner\": 1,\n    \"viewer\": 2\n}"
+				},
+				{
+					"name": "roles-users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMjQ0LCJpYXQiOjE3MjYyOTk2NDQsImp0aSI6ImU1N2MyYzgxNTE5YjRlNGZhMGM5YTlhOTZhZmU5MTY0IiwidXNlcl9pZCI6Mn0.LbK2K0w1YbPg-TAk6wRwiKaKE70cJzNYVVCySYaPzCM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/stats/role-users/?status=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"stats",
+								"role-users",
+								""
+							],
+							"query": [
+								{
+									"key": "created_after",
+									"value": "2024-09-14T00:00:00",
+									"disabled": true
+								},
+								{
+									"key": "created_before",
+									"value": "2024-09-14T10:00:00",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:52:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, GET"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"owner\": 1\n}"
+				},
+				{
+					"name": "roles-users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMjQ0LCJpYXQiOjE3MjYyOTk2NDQsImp0aSI6ImU1N2MyYzgxNTE5YjRlNGZhMGM5YTlhOTZhZmU5MTY0IiwidXNlcl9pZCI6Mn0.LbK2K0w1YbPg-TAk6wRwiKaKE70cJzNYVVCySYaPzCM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/stats/role-users/?created_after=2024-09-14T10:00:00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"stats",
+								"role-users",
+								""
+							],
+							"query": [
+								{
+									"key": "created_after",
+									"value": "2024-09-14T10:00:00"
+								},
+								{
+									"key": "created_before",
+									"value": "2024-09-14T10:00:00",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:53:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, GET"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{}"
+				}
+			]
 		},
 		{
 			"name": "organization-users",
@@ -320,12 +1540,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMjQ0LCJpYXQiOjE3MjYyOTk2NDQsImp0aSI6ImU1N2MyYzgxNTE5YjRlNGZhMGM5YTlhOTZhZmU5MTY0IiwidXNlcl9pZCI6Mn0.LbK2K0w1YbPg-TAk6wRwiKaKE70cJzNYVVCySYaPzCM",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8000/api/stats/organization-users/?created_after=2024-09-14T00:00:00&created_before=2024-09-14T00:00:00&status=0",
+					"raw": "http://localhost:8000/api/stats/organization-users/?created_after=2024-09-14T00:00:00&status=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -344,16 +1564,196 @@
 						},
 						{
 							"key": "created_before",
-							"value": "2024-09-14T00:00:00"
+							"value": "2024-09-14T00:00:00",
+							"disabled": true
 						},
 						{
 							"key": "status",
-							"value": "0"
+							"value": "1"
 						}
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "organization-users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMjQ0LCJpYXQiOjE3MjYyOTk2NDQsImp0aSI6ImU1N2MyYzgxNTE5YjRlNGZhMGM5YTlhOTZhZmU5MTY0IiwidXNlcl9pZCI6Mn0.LbK2K0w1YbPg-TAk6wRwiKaKE70cJzNYVVCySYaPzCM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/stats/organization-users/?created_after=2024-09-14T00:00:00&status=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"stats",
+								"organization-users",
+								""
+							],
+							"query": [
+								{
+									"key": "created_after",
+									"value": "2024-09-14T00:00:00"
+								},
+								{
+									"key": "created_before",
+									"value": "2024-09-14T00:00:00",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:46:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, GET"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Google\": 2,\n    \"Infosys\": 1,\n    \"TCS\": 2\n}"
+				},
+				{
+					"name": "organization-users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMjQ0LCJpYXQiOjE3MjYyOTk2NDQsImp0aSI6ImU1N2MyYzgxNTE5YjRlNGZhMGM5YTlhOTZhZmU5MTY0IiwidXNlcl9pZCI6Mn0.LbK2K0w1YbPg-TAk6wRwiKaKE70cJzNYVVCySYaPzCM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/stats/organization-users/?created_after=2024-09-14T00:00:00&status=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"stats",
+								"organization-users",
+								""
+							],
+							"query": [
+								{
+									"key": "created_after",
+									"value": "2024-09-14T00:00:00"
+								},
+								{
+									"key": "created_before",
+									"value": "2024-09-14T00:00:00",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:54:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, GET"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "13"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Infosys\": 1\n}"
+				}
+			]
 		},
 		{
 			"name": "organization-role-users",
@@ -362,12 +1762,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Mjk2MjQ0LCJpYXQiOjE3MjYyOTI2NDQsImp0aSI6IjgwMzg3NDVhOGNlMjRkMDk5NmE1YWU1OGIzMzk3ZDYyIiwidXNlcl9pZCI6Mn0.Bisb5i4UEkQU3RU1bkdo3RckoPO3t39fUYVWKmQuiMo",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8000/api/stats/organization-role-users/?created_after=2024-09-14T00:00:00&status=1",
+					"raw": "http://localhost:8000/api/stats/organization-role-users/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -382,16 +1782,276 @@
 					"query": [
 						{
 							"key": "created_after",
-							"value": "2024-09-14T00:00:00"
+							"value": "2024-09-14T00:00:00",
+							"disabled": true
 						},
 						{
 							"key": "status",
-							"value": "1"
+							"value": "1",
+							"disabled": true
 						}
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "organization-role-users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/stats/organization-role-users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"stats",
+								"organization-role-users",
+								""
+							],
+							"query": [
+								{
+									"key": "created_after",
+									"value": "2024-09-14T00:00:00",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:54:23 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, GET"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Google\": {\n        \"admin\": 1,\n        \"viewer\": 1\n    },\n    \"Infosys\": {\n        \"admin\": 1,\n        \"owner\": 1\n    },\n    \"TCS\": {\n        \"admin\": 1,\n        \"viewer\": 1\n    }\n}"
+				},
+				{
+					"name": "organization-role-users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/stats/organization-role-users/?status=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"stats",
+								"organization-role-users",
+								""
+							],
+							"query": [
+								{
+									"key": "created_after",
+									"value": "2024-09-14T00:00:00",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:54:37 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, GET"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Infosys\": {\n        \"owner\": 1\n    }\n}"
+				},
+				{
+					"name": "organization-role-users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2MzAzMDIwLCJpYXQiOjE3MjYyOTk0MjAsImp0aSI6ImMzYTU1MDIzMTU1NjRjNGRiNDZhMjc0YjZmNjcxZWE5IiwidXNlcl9pZCI6MX0.Vur6nsAHez0Lf1F_Tg-NS87zaDA_Ycd0eunGvIcj7qw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/stats/organization-role-users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"stats",
+								"organization-role-users",
+								""
+							],
+							"query": [
+								{
+									"key": "created_after",
+									"value": "2024-09-14T00:00:00",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 14 Sep 2024 07:54:48 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, GET"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Google\": {\n        \"admin\": 1,\n        \"viewer\": 1\n    },\n    \"Infosys\": {\n        \"admin\": 1,\n        \"owner\": 1\n    },\n    \"TCS\": {\n        \"admin\": 1,\n        \"viewer\": 1\n    }\n}"
+				}
+			]
 		}
 	]
 }
