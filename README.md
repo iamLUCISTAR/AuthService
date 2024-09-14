@@ -1,4 +1,4 @@
-# Multi-tenant Saas authentication system
+![image](https://github.com/user-attachments/assets/7b00dd3a-8d9c-4844-9504-629c7471d91d)# Multi-tenant Saas authentication system
 Api's for handling multi-tenant saas backend operations for handling the below scenarios.
 - Creating a user and assigning a role for him in a organization.
 - Inviting members from different organizations.
@@ -6,50 +6,58 @@ Api's for handling multi-tenant saas backend operations for handling the below s
 - Sending alert mails for each action performed.
 - Retrieving number of users based on organization and roles with filters such as from and to date.
 
-## DB design
+Django REST framework was used to develop the project to keep the application scalable and easily maintainable.
 
+## DB design
+4 tables as mentioned in the requirements with necessary contstraint and keys have been modeled. In addition to it a
+new table called,
+- Invitation
+is included to keep track of invitations sent to different users.
 
 ![Database Schema](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2012.14.31%20PM.png?raw=true)
 
 
 ## Code
 
-Two scripts were written for two functionalities.
-- First script to authenticate with Gmail API services and fetch emails from Gmail.
-- Second script to generate rule actions that needs to be applied on stored emails and then apply the actions for filtered emails.
+Running the python manage.py hosts the dev server for the application in local instance. 
+Endpoints for each api's have been mentioned in the postman exports.
 
-Code respository is defined in the below structure ,
+Code respository is defined in the below structure,
 
-- dockerfiles
-- src
-  - config
-  - dao
-  - entity
-  - manager
-  - script
+- api
+  - auth
+  - stats
 
-## Setup
+## Use cases covered.
 
-1. Create a python virtual environment (venv) and install the required packages mentioned in the requirements.txt file.
-    ```{console}
-   python -m venv venv
-   source venv/bin/activate && pip install -r requirements.txt
-   ```
-2. Setup the python path
-    ```{console}
-   export PYTHONPATH=$PYTHONPATH:./
-   ```
-3. Setup and run the database server in the local. MySql engine is hosted in this implementation using docker compose.
-    ```{console}
-   docker-compose -f <path_to_docker_file> up -d 
-   ```
-3. Execute the below scripts to simulate the rule engine flow.
-    ```{console}
-    python3 src/script/mail_loader.py --clear True --limit 10
-    ```
-    ```{console}
-    python3 src/script/operations_executor.py --json <path/to/jsonfile/>
-    ```
+1. ** Sign Up **
+   - Users can be created with orgainization details and role specification.
+2. ** Sign In **
+   - Verifies user encrypted password from the user table and returns a JWT Token(Access token and Refresh token).
+3. ** Reset Password **
+   - User can reset his account password if he is already a user and send password change alert.
+4. ** Update and Delete member **
+   - Members role can be updated and deleted.
+5. ** Send and Accept Invite **
+   - Existing members can invite another user using an invite-member mail with a token with some expiry time.
+   - Upon invite acceptance the user will added with the invited role in the system, if he accepts before the token expiration.
+6. ** Email alert for every actions **
+   - Sign up
+   - ![Sign up](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.23%20AM.png?raw=true)
+   - Sign in
+   - ![Sign in](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.32%20AM.png?raw=true)
+   - Password update
+   - ![Password change](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.43%20AM.png?raw=true)
+   - Invite member
+   - ![Invite member](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2011.49.52%20AM.png?raw=true)
+7. ** Stats of users **
+   - Get the count of users role wise.
+   - Get the count of users organization wise.
+   - Get the count of users based on roles and the organization.
+   - Each stats request can take three filters and display the filtered results.
+     - Created before
+     - Created after
+     - Status
 
 ## Author
 
