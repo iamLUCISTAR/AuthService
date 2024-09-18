@@ -9,7 +9,7 @@ Api's for handling multi-tenant saas backend operations for handling the below s
 **Django REST framework** along with **sqlite3** was used to develop the project to keep the application scalable and maintainable.
 
 ## DB design
-4 tables as mentioned in the requirements with necessary contstraint and keys have been modeled. A 5th table **Invitation** is included to keep track of sent invitations.
+4 tables with necessary contstraint and keys have been modeled. A 5th table **Invitation** is included to keep track of sent invitations.
 
 ![Database Schema](https://github.com/iamLUCISTAR/AuthService/blob/master/Screenshot%202024-09-14%20at%2012.14.31%20PM.png?raw=true)
 
